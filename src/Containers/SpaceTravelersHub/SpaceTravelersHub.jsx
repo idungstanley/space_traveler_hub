@@ -11,7 +11,7 @@ const SpaceTravelersHub = () => (
       <Routes>
         <Route path="/" element={<div>Main page</div>} />
         <Route path="/my-profile" element={<MyProfile />} />
-        <Route path="/rockets" element={<Rockets/>}/>
+        <Route path="/rockets" element={<Rockets />} />
       </Routes>
     </BrowserRouter>
   </>
