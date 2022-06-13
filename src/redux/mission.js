@@ -8,7 +8,6 @@ const READ_DATA = 'spaceTravelersHub/missions/READ_DATA';
 
 const readMissionsData = () => async (dispatch) => {
   const missions = await getMissionsFromAPI();
-  console.log(missions);
   dispatch({
     type: READ_DATA,
     payload: missions,
