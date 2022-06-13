@@ -5,12 +5,14 @@ import Navbar from '../Containers/Navbar/Navbar';
 import MyProfile from '../Containers/MyProfile/MyProfile';
 import Rockets from '../Containers/Rockets/Rockets';
 import { readMissionsData } from '../redux/mission';
+import { readRocketData } from '../redux/rockets';
 
 const SpaceTravelersHub = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(readMissionsData());
+    dispatch(readRocketData());
   });
 
   return (
