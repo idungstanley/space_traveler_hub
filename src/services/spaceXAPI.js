@@ -6,7 +6,7 @@ const ENDPOINTS = {
   missions: 'missions/',
 };
 
-const getMissionsFromAPI = async () => {
+export const getMissionsFromAPI = async () => {
   const fetchRequest = new FetchRequest({
     url: BASE_URL + ENDPOINTS.missions,
   });
@@ -18,7 +18,7 @@ const getMissionsFromAPI = async () => {
   }
 };
 
-const getRocketsFromAPI = async () => {
+export const getRocketsFromAPI = async () => {
   const fetchRequest = new FetchRequest({
     url: BASE_URL + ENDPOINTS.rockets,
   });
