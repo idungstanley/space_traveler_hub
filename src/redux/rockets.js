@@ -3,7 +3,7 @@ import { getRocketsFromAPI } from '../services/spaceXAPI';
 const READ = 'space_hub_traveler/reducer/READ';
 
 // Reducer
-const rocketReducer = (state, action) => {
+const rocketReducer = (state = [], action) => {
   switch (action.type) {
     case READ:
       return action.payload;
