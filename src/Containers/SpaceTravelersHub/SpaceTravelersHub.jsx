@@ -1,5 +1,10 @@
 import React from 'react';
+import Navbar from '../Navbar/Navbar';
 
-const SpaceTravelersHub = () => <div className="App">Andres CRA Template!</div>;
+const SpaceTravelersHub = () => (
+  <>
+    <Navbar />
+  </>
+);
 
 export default SpaceTravelersHub;
