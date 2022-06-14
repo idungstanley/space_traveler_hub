@@ -1,14 +1,13 @@
 import React from 'react';
 import useMission from '../../hooks/useMission';
+import Mission from '../../Components/Mission/Mission';
 
 const Missions = () => {
   const { missions } = useMission();
-
   const grid = {
     display: 'grid',
     gridTemplateColumns: '1fr 4fr 1fr 1fr',
   };
-
   return (
     <section>
       <ul>
@@ -22,12 +21,12 @@ const Missions = () => {
           ({
             missionName, description, missionId, status,
           }) => (
-            <li style={grid} key={missionId}>
-              <h2>{missionName}</h2>
-              <p>{description}</p>
-              <div>{status}</div>
-              <button type="button">Join Mission</button>
-            </li>
+            <Mission
+              key={missionId}
+              missionName={missionName}
+              description={description}
+              status={status}
+            />
           ),
         )}
       </ul>
