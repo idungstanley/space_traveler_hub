@@ -1,14 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import ReservationBtn from './Reservation/ReservationBtn';
 
 const Card = ({ img, title, desc }) => (
-  <div>
+  <article>
     <img src={img} alt="" />
-    <article>
+    <div>
       <h4>{title}</h4>
       <p>{desc}</p>
-    </article>
-  </div>
+      <ReservationBtn reserve="reserve" />
+    </div>
+  </article>
 );
 
 Card.propTypes = {

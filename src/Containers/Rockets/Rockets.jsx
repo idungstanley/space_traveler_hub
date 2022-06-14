@@ -4,11 +4,16 @@ import Card from './Card/Card';
 
 const Rockets = () => {
   const RocketData = useSelector((state) => state.rockets);
-  console.log(RocketData);
   return (
     <>
       {RocketData.map((data) => (
-        <Card img={data.flickr_images} key={data.id} title="sunday" desc="sna" />
+        <Card
+          img={data.flickr_images}
+          key={data.id}
+          title={data.rocket_name}
+          desc={data.description}
+        />
+
       ))}
     </>
   );
