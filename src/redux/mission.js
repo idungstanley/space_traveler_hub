@@ -8,9 +8,21 @@ const READ_DATA = 'spaceTravelersHub/missions/READ_DATA';
 
 const readMissionsData = () => async (dispatch) => {
   const missions = await getMissionsFromAPI();
+  const missionsWithStatus = missions.map(
+    ({
+      mission_id: missionId,
+      mission_name: missionName,
+      description,
+    }) => ({
+      missionId,
+      missionName,
+      description,
+      status: 'Not a member',
+    }),
+  );
   dispatch({
     type: READ_DATA,
-    payload: missions,
+    payload: missionsWithStatus,
   });
 };
 
