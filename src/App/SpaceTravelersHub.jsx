@@ -6,6 +6,7 @@ import MyProfile from '../Containers/MyProfile/MyProfile';
 import Rockets from '../Containers/Rockets/Rockets';
 import { readMissionsData } from '../redux/mission';
 import { readRocketData } from '../redux/rockets';
+import Missions from '../Containers/Missions/Missions';
 
 const SpaceTravelersHub = () => {
   const dispatch = useDispatch();
@@ -23,6 +24,7 @@ const SpaceTravelersHub = () => {
           <Route path="/" element={<div>Main page</div>} />
           <Route path="/my-profile" element={<MyProfile />} />
           <Route path="/rockets" element={<Rockets />} />
+          <Route path="/missions" element={<Missions />} />
         </Routes>
       </BrowserRouter>
     </>
