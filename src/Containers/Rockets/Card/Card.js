@@ -9,7 +9,10 @@ const Card = ({
     <img src={img} alt="" />
     <div>
       <h4>{title}</h4>
-      <p>{desc}</p>
+      <p>
+        <span>{reserved ? 'Reserved' : ''}</span>
+        {desc}
+      </p>
       <ReservationBtn rocketId={rocketId} reserved={reserved} />
     </div>
   </article>

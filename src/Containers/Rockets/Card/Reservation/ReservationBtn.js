@@ -10,7 +10,7 @@ const ReservationBtn = ({ rocketId, reserved }) => {
   return (
     <button
       type="button"
-      onClick={() => (reserved ? handleBookings : cancelBookings)}
+      onClick={() => (reserved ? cancelBookings() : handleBookings())}
     >
       {reserved ? 'Cancel Reservation' : 'Reserve Rocket'}
     </button>

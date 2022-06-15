@@ -10,14 +10,14 @@ const rocketReducer = (state = [], action) => {
       return action.payload;
     case BOOK_RESERVE:
       return state.map((rocket) => {
-        if (rocket.rocket_id === action.payload) {
+        if (rocket.rocketId === action.payload) {
           return { ...rocket, reserved: true };
         }
         return rocket;
       });
     case CANCEL_RESERVE:
       return state.map((rocket) => {
-        if (rocket.rocket_id === action.payload) {
+        if (rocket.rocketId === action.payload) {
           return { ...rocket, reserved: false };
         }
         return rocket;
