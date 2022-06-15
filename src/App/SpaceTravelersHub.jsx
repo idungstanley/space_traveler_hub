@@ -19,9 +19,8 @@ const SpaceTravelersHub = () => {
       <BrowserRouter>
         <Navbar />
         <Routes>
-          <Route path="/" element={<div>Main page</div>} />
+          <Route path="/" element={<Rockets />} />
           <Route path="/my-profile" element={<MyProfile />} />
-          <Route path="/rockets" element={<Rockets />} />
           <Route path="/missions" element={<Missions />} />
         </Routes>
       </BrowserRouter>
