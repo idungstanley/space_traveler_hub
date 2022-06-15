@@ -4,7 +4,6 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from '../Containers/Navbar/Navbar';
 import MyProfile from '../Containers/MyProfile/MyProfile';
 import Rockets from '../Containers/Rockets/Rockets';
-import { readMissionsData } from '../redux/mission';
 import { readRocketData } from '../redux/rockets';
 import Missions from '../Containers/Missions/Missions';
 
@@ -12,7 +11,6 @@ const SpaceTravelersHub = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(readMissionsData());
     dispatch(readRocketData());
   });
 
