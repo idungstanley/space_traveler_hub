@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { bookRocket, cancelBooking } from '../../../../redux/rockets';
+import { bookRocket, cancelBooking } from '../../redux/rockets';
 
 const ReservationBtn = ({ rocketId, reserved }) => {
   const dispatch = useDispatch();
@@ -18,7 +18,7 @@ const ReservationBtn = ({ rocketId, reserved }) => {
 };
 
 ReservationBtn.propTypes = {
-  reserved: PropTypes.string.isRequired,
+  reserved: PropTypes.bool.isRequired,
   rocketId: PropTypes.string.isRequired,
 };
 

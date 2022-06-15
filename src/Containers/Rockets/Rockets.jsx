@@ -1,11 +1,9 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import Card from './Card/Card';
-// import { bookRocket, cancelBooking } from '../../redux/rockets';
+import Card from '../../Components/Card/Card';
 
 const Rockets = () => {
   const RocketData = useSelector((state) => state.rockets);
-  console.log(RocketData);
   return (
     <>
       {RocketData.map((data) => (
@@ -17,7 +15,6 @@ const Rockets = () => {
           rocketId={data.rocketId}
           reserved={data.reserved}
         />
-
       ))}
     </>
   );
