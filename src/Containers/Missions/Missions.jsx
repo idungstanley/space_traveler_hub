@@ -19,13 +19,14 @@ const Missions = () => {
 
         {missions.map(
           ({
-            missionName, description, missionId, status,
+            missionName, description, missionId, reserved,
           }) => (
             <Mission
               key={missionId}
+              missionId={missionId}
               missionName={missionName}
               description={description}
-              status={status}
+              reserved={reserved}
             />
           ),
         )}

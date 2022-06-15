@@ -2,7 +2,9 @@ import { getMissionsFromAPI } from '../services/spaceXAPI';
 
 // Actions
 
-const READ_DATA = 'spaceTravelersHub/missions/READ_DATA';
+const READ_DATA = 'space_TravelersHub/missions/READ_DATA';
+const JOIN_MISSION = 'spaceTravelersHub/missions/JOIN_MISSION';
+const LEAVE_MISSION = 'spaceTravelersHub/missions/LEAVE_MISSION';
 
 // Action Creator
 
@@ -17,7 +19,7 @@ const readMissionsData = () => async (dispatch) => {
       missionId,
       missionName,
       description,
-      status: 'Not a member',
+      reserved: false,
     }),
   );
   dispatch({
@@ -26,6 +28,16 @@ const readMissionsData = () => async (dispatch) => {
   });
 };
 
+const joinMission = (id) => ({
+  type: JOIN_MISSION,
+  payload: id,
+});
+
+const leaveMission = (id) => ({
+  type: LEAVE_MISSION,
+  payload: id,
+});
+
 // Reducer
 
 const missionsReducer = (state = [], action) => {
@@ -33,9 +45,27 @@ const missionsReducer = (state = [], action) => {
     return action.payload;
   }
 
+  if (action.type === JOIN_MISSION) {
+    return state.map((mission) => {
+      if (mission.missionId === action.payload) {
+        return { ...mission, reserved: true };
+      }
+      return mission;
+    });
+  }
+
+  if (action.type === LEAVE_MISSION) {
+    return state.map((mission) => {
+      if (mission.missionId === action.payload) {
+        return { ...mission, reserved: false };
+      }
+      return mission;
+    });
+  }
+
   return state;
 };
 
-export { readMissionsData };
+export { readMissionsData, joinMission, leaveMission };
 
 export default missionsReducer;
