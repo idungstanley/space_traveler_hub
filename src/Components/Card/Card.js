@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import ReservationBtn from './Reservation/ReservationBtn';
+import ReservationBtn from '../Reservation/ReservationBtn';
 
 const Card = ({
   img, title, desc, rocketId, reserved,

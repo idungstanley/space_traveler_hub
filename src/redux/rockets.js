@@ -37,14 +37,24 @@ export const readRocketData = () => async (dispatch) => {
       rocket_name: title,
       flickr_images: image,
     }) => ({
-      rocketId, desc, title, image, reserved: false,
+      rocketId,
+      desc,
+      title,
+      image: image[0],
+      reserved: false,
     }),
   );
   dispatch({ type: READ, payload: filterData });
 };
 
-export const bookRocket = (id) => ({ type: BOOK_RESERVE, payload: id });
+export const bookRocket = (id) => ({
+  type: BOOK_RESERVE,
+  payload: id,
+});
 
-export const cancelBooking = (id) => ({ type: CANCEL_RESERVE, payload: id });
+export const cancelBooking = (id) => ({
+  type: CANCEL_RESERVE,
+  payload: id,
+});
 
 export default rocketReducer;
