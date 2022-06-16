@@ -10,6 +10,7 @@ export const MissionsContainer = styled.ul`
   width: 90%;
   margin-inline: auto;
   border: 1px solid gray;
+  max-width: 1080px;
 `;
 
 export const TableTitles = styled.li`
