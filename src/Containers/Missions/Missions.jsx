@@ -1,12 +1,15 @@
 import React from 'react';
 import useMission from '../../hooks/useMission';
 import Mission from '../../Components/Mission/Mission';
+import MissionPopup from '../../Components/MissionPopup/MissionPopup';
 import useWindowSize from '../../hooks/useWindowSize';
+import usePopup from '../../hooks/usePopup';
 import * as styled from './missionsStyles';
 
 const Missions = () => {
   const { missions } = useMission();
   const isDesktop = useWindowSize();
+  const { displayPopup } = usePopup();
   return (
     <styled.Section>
       <styled.MissionsContainer>
@@ -30,6 +33,7 @@ const Missions = () => {
           ),
         )}
       </styled.MissionsContainer>
+      {displayPopup && <MissionPopup />}
     </styled.Section>
   );
 };
