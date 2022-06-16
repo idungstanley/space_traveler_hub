@@ -1,5 +1,3 @@
-/* eslint-disable */
-
 import styled from 'styled-components/macro';
 import { NavLink } from 'react-router-dom';
 
@@ -30,6 +28,13 @@ export const LogoContainer = styled.div`
   }
 `;
 
+export const Title = styled.h1`
+  @media screen and (min-width: 768px) {
+    font-size: 1.6rem;
+    margin-left: 1rem;
+  }
+`;
+
 export const Links = styled.ul`
   position: fixed;
   z-index: 10;
@@ -43,8 +48,7 @@ export const Links = styled.ul`
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  transform: ${(props) =>
-    props.isOpen ? 'translateX(0)' : 'translateX(101%)'};
+  transform: ${(props) => (props.isOpen ? 'translateX(0)' : 'translateX(101%)')};
   transition: 0.3s ease;
 
   @media screen and (min-width: 768px) {

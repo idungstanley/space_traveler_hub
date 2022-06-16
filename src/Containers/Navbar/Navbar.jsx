@@ -16,7 +16,7 @@ const Navbar = () => {
     <styled.Header>
       <styled.LogoContainer>
         <img src={logo} alt="Logo" />
-        <h1>Space Traveler&apos;s Hub</h1>
+        <styled.Title>Space Travelers&apos; Hub</styled.Title>
         {isDesktop ? (
           ''
         ) : (
