@@ -17,7 +17,7 @@ const Mission = ({
 
   return (
     <styled.MissionContainer>
-      <h2>{missionName}</h2>
+      <styled.Title>{missionName}</styled.Title>
       {isDesktop && (
         <>
           <p>{description}</p>
@@ -35,12 +35,9 @@ const Mission = ({
         {reserved ? 'Active Member' : 'Not a Member'}
       </styled.StatusBadge>
       {!isDesktop && (
-        <button
-          type="button"
-          onClick={() => handleOpenPopup(missionId)}
-        >
+        <styled.SignIcon onClick={() => handleOpenPopup(missionId)}>
           See more
-        </button>
+        </styled.SignIcon>
       )}
     </styled.MissionContainer>
   );

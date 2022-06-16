@@ -16,6 +16,7 @@ export const BlurrBackground = styled.div`
 
 export const PopupContainer = styled.div`
   width: 90%;
+  max-width: 500px;
   margin-inline: auto;
   border-radius: 1rem;
   padding: 2rem 1rem;
