@@ -1,21 +1,20 @@
 import React from 'react';
 import useMission from '../../hooks/useMission';
 import Mission from '../../Components/Mission/Mission';
+import useWindowSize from '../../hooks/useWindowSize';
+import * as styled from './missionsStyles';
 
 const Missions = () => {
   const { missions } = useMission();
-  const grid = {
-    display: 'grid',
-    gridTemplateColumns: '1fr 4fr 1fr 1fr',
-  };
+  const isDesktop = useWindowSize();
   return (
-    <section>
-      <ul>
-        <li style={grid}>
+    <styled.Section>
+      <styled.MissionsContainer>
+        <styled.TableTitles>
           <h2>Mission</h2>
-          <h2>Description</h2>
+          {isDesktop && <h2>Description</h2>}
           <h2>Status</h2>
-        </li>
+        </styled.TableTitles>
 
         {missions.map(
           ({
@@ -30,8 +29,8 @@ const Missions = () => {
             />
           ),
         )}
-      </ul>
-    </section>
+      </styled.MissionsContainer>
+    </styled.Section>
   );
 };
 
