@@ -20,19 +20,20 @@ const Mission = ({
       <styled.Title>{missionName}</styled.Title>
       {isDesktop && (
         <>
-          <p>{description}</p>
-          <button
+          <styled.Description>{description}</styled.Description>
+          <styled.JoinBtn
+            reserved={reserved}
             type="button"
             onClick={() => (reserved
               ? handleLeaveMission(missionId)
               : handleJoinMission(missionId))}
           >
             {reserved ? 'Leave Mission' : 'Join Mission'}
-          </button>
+          </styled.JoinBtn>
         </>
       )}
       <styled.StatusBadge reserved={reserved}>
-        {reserved ? 'Active Member' : 'Not a Member'}
+        {reserved ? 'Active Member' : 'NOT A MEMBER'}
       </styled.StatusBadge>
       {!isDesktop && (
         <styled.SignIcon onClick={() => handleOpenPopup(missionId)}>
