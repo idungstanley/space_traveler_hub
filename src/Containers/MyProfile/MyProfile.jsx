@@ -6,7 +6,6 @@ const MyProfile = () => {
   const { activeMissions } = useMission();
   const Data = useSelector((state) => state.rockets);
   const activeRockets = Data.filter((rocket) => rocket.reserved);
-  console.log(activeRockets);
   return (
     <section>
       <div>

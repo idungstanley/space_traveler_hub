@@ -1,16 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ReservationBtn from '../Reservation/ReservationBtn';
+import './card.css';
 
 const Card = ({
   img, title, desc, rocketId, reserved,
 }) => (
-  <article>
-    <img src={img} alt="" />
-    <div>
-      <h4>{title}</h4>
+  <article className="card">
+    <img className="image" src={img} alt="" />
+    <div className="card-desc">
+      <h4 className="title">{title}</h4>
       <p>
-        <span>{reserved ? 'Reserved' : ''}</span>
+        {reserved ? <span className="status">Reserved</span> : ''}
         {desc}
       </p>
       <ReservationBtn rocketId={rocketId} reserved={reserved} />
