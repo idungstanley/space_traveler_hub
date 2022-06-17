@@ -10,7 +10,7 @@ const MissionPopup = () => {
     missionId, missionName, description, reserved,
   } = activePopup[0];
   return (
-    <styled.BlurrBackground>
+    <styled.BlurrBackground data-testid="popup">
       <styled.PopupContainer>
         <styled.CloseIcon
           onClick={() => handleClosePopup(missionId)}
