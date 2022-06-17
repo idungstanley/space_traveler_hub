@@ -1,8 +1,7 @@
 import React from 'react';
-import { render, fireEvent, screen } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { Provider } from 'react-redux';
-import Rockets from '../Rockets/Rockets';
 import Missions from '../Missions/Missions';
 import store from '../../App/configureStore';
 import MyProfile from './MyProfile';
@@ -48,7 +47,7 @@ describe(MyProfile, () => {
     // Unmount the missionsComp, so it doesn't interfere with MyProfile tests
     missionsComp.unmount();
 
-    //We expect the Thaicom mission to be in MyProfile since is reserved:
+    // We expect the Thaicom mission to be in MyProfile since is reserved:
     expect(component.getByText('Thaicom')).toBeInTheDocument();
   });
 });
