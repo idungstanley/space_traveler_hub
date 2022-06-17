@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import useMission from '../../hooks/useMission';
+import * as styled from './myProfileStyles';
 
 const MyProfile = () => {
   const { activeMissions } = useMission();
@@ -8,24 +9,24 @@ const MyProfile = () => {
   const activeRockets = Data.filter((rocket) => rocket.reserved);
   console.log(activeRockets);
   return (
-    <section>
-      <div>
-        <h2>My Missions</h2>
-        <ul>
+    <styled.MyProfileContainer>
+      <styled.ListContainer>
+        <styled.Title>My Missions</styled.Title>
+        <styled.List>
           {activeMissions.map(({ missionName, missionId }) => (
-            <li key={missionId}>{missionName}</li>
+            <styled.Item key={missionId}>{missionName}</styled.Item>
           ))}
-        </ul>
-      </div>
-      <div>
-        <h2>My Rockets</h2>
-        <ul>
+        </styled.List>
+      </styled.ListContainer>
+      <styled.ListContainer>
+        <styled.Title>My Rockets</styled.Title>
+        <styled.List>
           {activeRockets.map(({ rocketId, title }) => (
-            <li key={rocketId}>{title}</li>
+            <styled.Item key={rocketId}>{title}</styled.Item>
           ))}
-        </ul>
-      </div>
-    </section>
+        </styled.List>
+      </styled.ListContainer>
+    </styled.MyProfileContainer>
   );
 };
 
