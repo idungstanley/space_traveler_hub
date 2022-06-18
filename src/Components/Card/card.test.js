@@ -1,21 +1,23 @@
-import React from 'react'
-import { render, fireEvent } from '@testing-library/react'
-import '@testing-library/jest-dom'
-import { Provider } from 'react-redux'
-import Card from './Card'
-import store from '../../App/configureStore'
+import React from 'react';
+import { render, fireEvent } from '@testing-library/react';
+import '@testing-library/jest-dom';
+import { Provider } from 'react-redux';
+import Card from './Card';
+import store from '../../App/configureStore';
 
-let component
+let component;
 
-let cardProps = {
+const cardProps = {
   img: 'http.example.png',
   reserved: false,
   title: 'Datr',
   desc: 'dk ekef ekf aefeofnv vrk',
   rocketId: '2',
-}
+};
 
-const { img, reserved, title, desc, rocketId } = cardProps
+const {
+  img, reserved, title, desc, rocketId,
+} = cardProps;
 
 describe(Card, () => {
   beforeEach(() => {
@@ -28,15 +30,15 @@ describe(Card, () => {
           desc={desc}
           rocketId={rocketId}
         />
-      </Provider>
-    )
-  })
+      </Provider>,
+    );
+  });
   test('Renders appropriate data', () => {
-    expect(component.getByText(desc)).toBeInTheDocument()
-    expect(component.getByText(title)).toBeInTheDocument()
-  })
+    expect(component.getByText(desc)).toBeInTheDocument();
+    expect(component.getByText(title)).toBeInTheDocument();
+  });
   test('Fire event', () => {
-    const btn = component.getByRole('button')
-    fireEvent.click(btn)
-  })
-})
+    const btn = component.getByRole('button');
+    fireEvent.click(btn);
+  });
+});
