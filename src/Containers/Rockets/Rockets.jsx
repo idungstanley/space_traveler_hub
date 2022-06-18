@@ -6,7 +6,7 @@ import './rocket.css';
 const Rockets = () => {
   const RocketData = useSelector((state) => state.rockets);
   return (
-    <section className="container">
+    <section className="container" data-testid="container">
       {RocketData.map((data) => (
         <Card
           img={data.image}
